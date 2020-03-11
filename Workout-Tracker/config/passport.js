@@ -1,8 +1,4 @@
-require('./config/database');
-require('./config/passport');
-
 const passport = require('passport');
-
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../model/user');
 
@@ -14,8 +10,8 @@ passport.use(new GoogleStrategy ({
     function (acessToken, refreshToken, profile, cb) {
         User.findOne({ 'googleId': profile.id }, function(err, user) {
             if (err) return cb (err);
-            if (student) {
-                return cb(null, student);
+            if (user) {
+                return cb(null, user);
             } else {
                 const newUser = new User ({
                     name: profile.displayName,
