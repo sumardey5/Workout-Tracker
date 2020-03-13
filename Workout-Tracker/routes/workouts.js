@@ -8,7 +8,8 @@ const workoutCtrl = require('../controllers/workouts');
 // });
 
 router.get('/new', workoutCtrl.new);
-
 router.post('/', workoutCtrl.create);
+router.get('/', workoutCtrl.index);
+
 
 module.exports = router;
