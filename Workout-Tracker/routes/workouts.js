@@ -9,4 +9,6 @@ const workoutCtrl = require('../controllers/workouts');
 
 router.get('/new', workoutCtrl.new);
 
+router.post('/', workoutCtrl.create);
+
 module.exports = router;
