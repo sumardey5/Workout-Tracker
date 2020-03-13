@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Add Workout</title>
+</head>
+<body>
+    <h2>Enter new workout:</h2>
+    <form action="/workouts" method="POST">
+        <label> 
+            Exercise Name:
+            <input type="text" name="exerciseName">
+        </label><br><br>
+        <label>
+            Sets: 
+            <input type="number" name="sets">
+        </label><br><br>
+        <label>
+            Repetitions: 
+            <input type="number" name="repetitions">
+        </label><br><br>
+        <label>
+            Exercise Type:
+                <select name="exerciseType">
+                    <option value="Arms">Arms</option>
+                    <option value="Legs">Legs</option>
+                    <option value="Back">Back</option>
+                    <option value="Abdominals">Abdominals</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Shoulders">Shoulders</option>
+                </select>
+        </label><br><br>
+        <label>
+            Starting Weight:
+            <input type="number" name="startingWeight">
+        </label><br><br>
+        <label>
+            Starting Weight:
+            <input type="number" name="startingWeight">
+        </label><br><br>
+
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+</body>
+</html>

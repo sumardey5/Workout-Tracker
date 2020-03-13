@@ -6,7 +6,8 @@ const workoutSchema = new Schema({
     exerciseType: {type: String, enum: ['Arms', 'Legs', 'Back', 'Abdominals', 'Chest', 'Shoulders']},
     sets: {type: Number},
     repetitions: {type: Number},
-    startingWeight: {type: Number}
+    startingWeight: {type: Number},
+    targetWeight: {type: Number}
 }, {
     timestamps: true
 });
