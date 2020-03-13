@@ -3,7 +3,18 @@ const Workout = require('../model/workout');
 module.exports = {
     new: newWorkout,
     create,
-    index
+    index,
+    show
+}
+
+function show (req, res) {
+    Workout.findById(req.params.id, function(err, workouts) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("workouts/new", {title: "Workout Details", workouts});
+        }
+    });
 }
 
 function index (req, res) {
@@ -11,7 +22,7 @@ function index (req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.redner("workouts/index", {exercise: "Exercise", workouts});
+            res.render("workouts/index", {exercise: "Exercise", workouts});
         }
     })
 }

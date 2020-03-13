@@ -10,6 +10,6 @@ const workoutCtrl = require('../controllers/workouts');
 router.get('/new', workoutCtrl.new);
 router.post('/', workoutCtrl.create);
 router.get('/', workoutCtrl.index);
-
+router.get('/:id', workoutCtrl.show);
 
 module.exports = router;

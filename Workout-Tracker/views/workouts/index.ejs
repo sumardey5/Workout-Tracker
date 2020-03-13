@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Cuisine List</title>
+    <title>Workout List</title>
 </head>
 <body>
     <title>Exercise List</title>
@@ -22,17 +22,19 @@
                 <th>Target Weight</th>
             </tr>
         </thead>
-        <tbody>
-            <% workout.forEach (function (w) { %>
+
+        <!-- <tbody>
+             workouts.forEach (function (w) { 
                 <tr>    
-                    <td> <%= w.exercise %></td>
-                    <td> <%= w.exerciseType %></td>
-                    <td> <%= w.startingWeight %></td>
-                    <td> <%= w.targetWeight %></td>
+                    <td>  w.exercise </td>
+                    <td>  w.exerciseType </td>
+                    <td>  w.startingWeight </td>
+                    <td>  w.targetWeight </td>
                 </tr>
-            <% }) %>
-        </tbody>
+             }) 
+        </tbody> -->
+
     </table>
-    <a href="/worksout/new">Add Workout</a>
+    <a href="workouts/new">Add Workout</a>
 </body>
 </html>
