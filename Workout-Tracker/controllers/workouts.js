@@ -6,7 +6,8 @@ module.exports = {
     index,
     show,
     delete: deleteThis,
-    showUpdate
+    showUpdate,
+    update
 }
 
 function newWorkout (req, res) {
@@ -61,4 +62,24 @@ function showUpdate (req, res) {
             res.render('workouts/update', {title: 'Update Workout', workouts});
         }
     });
+}
+
+function update (req, res) {
+    Workout.findByIdAndUpdate(req.params.id,
+        {
+            exercise: req.body.exercise,
+            sets: req.body.sets,
+            repetitions: req.body.repetitions,
+            exerciseType: req.body.exerciseType,
+            startingWeight: req.body.startingWeight,
+            targetWeight: req.body.targetWeight
+        },
+        {new: true},
+        function (err, response) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('/workouts/');
+            }
+        });
 }
