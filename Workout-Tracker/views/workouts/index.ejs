@@ -23,16 +23,16 @@
             </tr>
         </thead>
 
-        <!-- <tbody>
-             workouts.forEach (function (w) { 
+        <tbody>
+            <% workouts.forEach(function (w) { %>
                 <tr>    
-                    <td>  w.exercise </td>
-                    <td>  w.exerciseType </td>
-                    <td>  w.startingWeight </td>
-                    <td>  w.targetWeight </td>
+                    <td><%=  w.exercise %></td>
+                    <td><%=  w.exerciseType %></td>
+                    <td><%=  w.startingWeight %></td>
+                    <td><%=  w.targetWeight %></td>
                 </tr>
-             }) 
-        </tbody> -->
+            <% }) %> 
+        </tbody>
 
     </table>
     <a href="workouts/new">Add Workout</a>

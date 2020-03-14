@@ -7,26 +7,6 @@ module.exports = {
     show
 }
 
-function show (req, res) {
-    Workout.findById(req.params.id, function(err, workouts) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("workouts/new", {title: "Workout Details", workouts});
-        }
-    });
-}
-
-function index (req, res) {
-    Workout.find({}, function(err, workouts) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("workouts/index", {exercise: "Exercise", workouts});
-        }
-    })
-}
-
 function newWorkout (req, res) {
     res.render("workouts/new");
 }
@@ -37,5 +17,25 @@ function create (req, res) {
         if (err) return res.render("workouts/new");
         console.log("Added workout to database: " + workouts);
         res.redirect("/workouts");
+    });
+}
+
+function index (req, res) {
+    Workout.find({}, function(err, workouts) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("workouts/index", {title: "Exercise", workouts});
+        }
+    })
+}
+
+function show (req, res) {
+    Workout.findById(req.params.id, function(err, workouts) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("workouts/index", {title: "Workout Details", workouts});
+        }
     });
 }
