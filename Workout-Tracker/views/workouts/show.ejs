@@ -22,5 +22,8 @@
     <div><%= workout.startingWeight %></div>
     <div class ="details-bold">Target Weight:</div>
     <div><%= workout.targetWeight %></div>
+    <form action="/workouts/update/<%= workout._id %>?_method=PUT">
+        <button type ="submit" class="btn btn-warning">Edit</button>
+    </form>
 </body>
 </html>

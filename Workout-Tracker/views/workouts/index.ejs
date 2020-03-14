@@ -22,7 +22,6 @@
                 <th>Target Weight</th>
             </tr>
         </thead>
-
         <tbody>
             <% workouts.forEach(function (w) { %>
                 <tr>    
@@ -30,6 +29,9 @@
                     <td><%=  w.exerciseType %></td>
                     <td><%=  w.startingWeight %></td>
                     <td><%=  w.targetWeight %></td>
+                    <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
+                    <td><button type ="submit" class="btn btn-danger">X</button></td>
+                    </form>
                 </tr>
             <% }) %> 
         </tbody>

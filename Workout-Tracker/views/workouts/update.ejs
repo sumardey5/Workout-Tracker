@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Workouts</title>
+</head>
+<body>
+    <h2>Update Workout:</h2><br>
+    <form action="/workouts/update<%= workout._id %>"" method="POST"">
+        <label>
+            Exercise Name:
+            <input type="text" name="title" value="<%= workout.exercise %>">
+        </label><br><br>
+        <label>
+            Sets:
+            <input type="number" name="title" value="<%= workout.sets %>">
+        </label><br><br>
+        <label>
+            Repetitions:
+            <input type="number" name="title" value="<%= workout.repetitions %>">
+        </label><br><br>
+        <label>
+            Exercise Type:
+            <select name="exerciseType">
+                <option selected ><%= workout.exerciseType %> </option>
+                <option value="Arms">Arms</option>
+                <option value="Legs">Legs</option>
+                <option value="Back">Back</option>
+                <option value="Abdominals">Abdominals</option>
+                <option value="Chest">Chest</option>
+                <option value="Shoulders">Shoulders</option>
+            </select>
+        </label><br><br>
+        <label>
+            Starting Weight:
+            <input type="number" name="title" value="<%= workout.startingWeight %>">
+        </label><br><br>
+        <label>
+            Target Weight:
+            <input type="number" name="title" value="<%= workout.targetWeight %>">
+        </label><br><br>
+
+        <button type="submit" class="btn btn-success">Update</button>
+    </form>
+</body>
+</html>

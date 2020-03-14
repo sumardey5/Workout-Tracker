@@ -4,7 +4,9 @@ module.exports = {
     new: newWorkout,
     create,
     index,
-    show
+    show,
+    delete: deleteThis,
+    showUpdate
 }
 
 function newWorkout (req, res) {
@@ -36,6 +38,27 @@ function show (req, res) {
             console.log(err);
         } else {
             res.render("workouts/index", {title: "Workout Details", workouts});
+        }
+    });
+}
+
+function deleteThis (req, res) {
+    Workout.findByIdAndDelete(req.params.id, function(err, workouts) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('deleting: ' + workouts);
+        }
+        res.redirect('/workouts');
+    })
+}
+
+function showUpdate (req, res) {
+    Workout.findById(req.params.id, function(err, workoutds) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('workouts/update', {title: 'Update Workout', workouts});
         }
     });
 }
