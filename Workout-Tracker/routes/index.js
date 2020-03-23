@@ -3,13 +3,13 @@ const router = express.Router();
 
 const passport = require('passport');
 
-// router.get('/', function(req, res, next) {
-//   res.redirect('workouts/');
-// });
-
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('workouts/');
 });
+
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 router.get('/auth/google', passport.authenticate (
   'google',
