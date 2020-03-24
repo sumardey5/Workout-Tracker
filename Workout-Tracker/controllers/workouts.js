@@ -24,42 +24,42 @@ function create (req, res) {
 }
 
 function index (req, res) {
-    Workout.find({}, function(err, workouts) {
+    Workout.find({}, function(err, workout) {
         if (err) {
             console.log(err);
         } else {
-            res.render("workouts/index", {workouts});
+            res.render("workouts/index", {workout});
         }
     });
 }
 
 function show (req, res) {
-    Workout.findById(req.params.id, function(err, workouts) {
+    Workout.findById(req.params.id, function(err, workout) {
         if (err) {
             console.log(err);
         } else {
-            res.render("workouts/index", {title: "Workout Details", workouts});
+            res.render("workouts/show", {workout});
         }
     });
 }
 
 function deleteThis (req, res) {
-    Workout.findByIdAndDelete(req.params.id, function(err, workouts) {
+    Workout.findByIdAndDelete(req.params.id, function(err, workout) {
         if (err) {
             console.log(err);
         } else {
-            console.log('deleting: ' + workouts);
+            console.log('deleting: ' + workout);
         }
         res.redirect('/workouts');
     })
 }
 
 function showUpdate (req, res) {
-    Workout.findById(req.params.id, function(err, workouts) {
+    Workout.findById(req.params.id, function(err, workout) {
         if (err) {
             console.log(err);
         } else {
-            res.render('workouts/update', {title: 'Update Workout', workouts});
+            res.render('workouts/update', {title: 'Update Workout', workout});
         }
     });
 }

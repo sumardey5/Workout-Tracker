@@ -23,12 +23,13 @@
             </tr>
         </thead>
         <tbody>
-            <% workouts.forEach(function (w) { %>
+            <% workout.forEach(function (w) { %>
                 <tr>    
                     <td><%=  w.exercise %></td>
                     <td><%=  w.exerciseType %></td>
                     <td><%=  w.startingWeight %></td>
                     <td><%=  w.targetWeight %></td>
+                    <td><a href="/workouts/<%= w._id %>">Details</a></td>
                     <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
                     <td><button type ="submit" class="btn btn-danger">X</button></td>
                     </form>
