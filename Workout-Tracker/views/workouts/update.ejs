@@ -10,18 +10,18 @@
 </head>
 <body>
     <h2>Update Workout:</h2><br>
-    <form action="/workouts/update<%= workout._id %>"" method="POST"">
+    <form action="/workouts/update/<%= workout._id %>?_method=PUT" method="POST">
         <label>
             Exercise Name:
-            <input type="text" name="title" value="<%= workout.exercise %>">
+            <input type="text" name="exercise" value="<%= workout.exercise %>">
         </label><br><br>
         <label>
             Sets:
-            <input type="number" name="title" value="<%= workout.sets %>">
+            <input type="number" name="sets" value="<%= workout.sets %>">
         </label><br><br>
         <label>
             Repetitions:
-            <input type="number" name="title" value="<%= workout.repetitions %>">
+            <input type="number" name="repetitions" value="<%= workout.repetitions %>">
         </label><br><br>
         <label>
             Exercise Type:
@@ -37,11 +37,11 @@
         </label><br><br>
         <label>
             Starting Weight:
-            <input type="number" name="title" value="<%= workout.startingWeight %>">
+            <input type="number" name="startingWeight" value="<%= workout.startingWeight %>">
         </label><br><br>
         <label>
             Target Weight:
-            <input type="number" name="title" value="<%= workout.targetWeight %>">
+            <input type="number" name="targetWeight" value="<%= workout.targetWeight %>">
         </label><br><br>
         <button type="submit" class="btn btn-success">Update</button>
     </form>

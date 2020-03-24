@@ -79,7 +79,7 @@ function update (req, res) {
             if (err) {
                 console.log(err);
             } else {
-                res.redirect('/workouts/');
+                res.redirect('/workouts');
             }
         });
 }
