@@ -7,12 +7,12 @@ const workoutCtrl = require('../controllers/workouts');
 //   res.send('respond with a resource');
 // });
 
+router.get('/', workoutCtrl.index);
 router.get('/new', workoutCtrl.new);
 router.post('/', workoutCtrl.create);
-router.get('/', workoutCtrl.index);
 router.get('/:id', workoutCtrl.show);
 router.delete('/:id', workoutCtrl.delete);
-router.put('/update/:id', workoutCtrl.showUpdate);
-router.post('/update/:id', workoutCtrl.update);
+router.get('/update/:id', workoutCtrl.showUpdate);
+router.put('/update/:id', workoutCtrl.update);
 
 module.exports = router;

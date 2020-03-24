@@ -17,8 +17,8 @@ function newWorkout (req, res) {
 function create (req, res) {
     const workout = new Workout(req.body);
     workout.save(function(err) {
-        if (err) return res.render("workouts/new");
-        console.log("Added workout to database: " + workouts);
+        if (err) {console.log(err);return res.render("workouts/new");}
+        console.log("Added workout to database: " + workout);
         res.redirect("/workouts");
     });
 }
@@ -28,9 +28,9 @@ function index (req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("workouts/index", {title: "Exercise", workouts});
+            res.render("workouts/index", {workouts});
         }
-    })
+    });
 }
 
 function show (req, res) {
@@ -55,7 +55,7 @@ function deleteThis (req, res) {
 }
 
 function showUpdate (req, res) {
-    Workout.findById(req.params.id, function(err, workoutds) {
+    Workout.findById(req.params.id, function(err, workouts) {
         if (err) {
             console.log(err);
         } else {
@@ -68,9 +68,9 @@ function update (req, res) {
     Workout.findByIdAndUpdate(req.params.id,
         {
             exercise: req.body.exercise,
+            exerciseType: req.body.exerciseType,
             sets: req.body.sets,
             repetitions: req.body.repetitions,
-            exerciseType: req.body.exerciseType,
             startingWeight: req.body.startingWeight,
             targetWeight: req.body.targetWeight
         },
